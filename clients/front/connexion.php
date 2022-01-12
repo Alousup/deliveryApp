@@ -114,17 +114,23 @@
 		<div class="logo"> <img src="C:\Users\admin\Documents\0 Projet\among-us-41771.png" alt=""> </div>
 		<div class="text-center mt-4 name" style="text-align: center;"> Delivery </div>
 		<form method='POST' class="p-3 mt-3">
-			<div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text" name="numero" id="numero" placeholder="Numero de telephone"> </div>
+			<div class="form-field d-flex align-items-center"> 
+				<span class="far fa-user"></span> 
+				<input type="text" name="numero" id="numero" placeholder="Numero de telephone"> 
+			</div>
 
-			<div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="password" id="pwd" placeholder="Mot de Passe"> </div> 
+			<div class="form-field d-flex align-items-center"> 
+				<span class="fas fa-key"></span> 
+				<input type="password" name="password" id="pwd" placeholder="Mot de Passe"> 
+			</div> 
 			
-			<button name='connexion' class="btn mt-3">Connexion</button>
+			<input type="submit" name='connexion' class="btn mt-3" value="CONNECTION">
 		</form>
 		<div class="text-center fs-6"> Pas de compte ? <a href="clientInscription.php">S'inscrire</a> </div>
 	</div>
 
 	<?php
-    	include ('../php/login.php');
+    	include ('..//php/login.php');
   	?>
 </body>
 </html>

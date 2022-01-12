@@ -1,5 +1,5 @@
 <?php
-    include ('connexion.php');
+    include ('../php/connexion.php');
 
     if(isset($_POST['connexion'])){
         $nu=$_POST['numero'];
@@ -14,7 +14,9 @@
           $sql="SELECT * FROM clients WHERE numero='$nu' AND password='$pa'";
           $req=pg_query($conn, $sql);
           echo "connexion reussi";
-          
+         if(pg_num_rows($req)==0){
+           echo'Login ou mot de passe oublié';
+         }else{
           //recuperation de l'id du client
           $sql="SELECT * FROM clients WHERE numero='$nu'";
           $req=pg_query($conn, $sql);
@@ -22,6 +24,7 @@
           
           $_SESSION['idcl']=$i['idcl'];
           header("location: ../front/clienthome.php");
+         }
           }
         }
 ?>

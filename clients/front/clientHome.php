@@ -112,7 +112,7 @@
 		<div class="logo"> <img src="icon.png" alt=""> </div>
 		<div class="text-center mt-4 name" style="text-align: center;"> Delivery - Client </div>
 		<div class="p-3 mt-3">
-			<button class="btn mt-3" style="margin-top: 20px;"><a href="clientCommande.html" style="color: white;">Commander</a></button>
+			<button class="btn mt-3" style="margin-top: 20px;"><a href="clientCommande.php" style="color: white;">Commander</a></button>
 			<button class="btn mt-3"><a href="C:\Users\admin\Documents\0 Projet\connexion\connexion.html" style="color: white;">Déconnexion</a></button>
         </div>
 	</div>
