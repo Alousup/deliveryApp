@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,15 +17,15 @@
         }
 
         #container {
-        width: 840px;
+        width: 860px;
         margin: 25px auto;
         }
 
         .whysign {
         float: left;
         background-color: white;
-        width: 480px;
-        height: 347px;
+        width: 500px;
+        height: 455.5px;
         border-radius: 0 5px 5px 0;
         padding-top: 20px;
         padding-right: 20px;
@@ -38,6 +41,32 @@
         }
 
         [type=text] {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        border: 0;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+        height: 45px;
+        line-height: 45px;  
+        margin-bottom: 10px;
+        font-size: 1em;
+        color: rgba(0,0,0,.4);
+        }
+
+        [type=tel] {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        border: 0;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+        height: 45px;
+        line-height: 45px;  
+        margin-bottom: 10px;
+        font-size: 1em;
+        color: rgba(0,0,0,.4);
+        }
+
+        [type=password] {
         display: block;
         margin: 0 auto;
         width: 80%;
@@ -69,31 +98,29 @@
 
         h1 {
         color: rgba(0,0,0,.7);
-        font-weight: 900;
+        font-weight: 700;
         font-size: 2.5em;
         }
 
-        p {
+        strong {
         color: rgba(0,0,0,.6);
         font-size: 1.2em;
         margin: 50px 0 50px 0;
         }
 
-        span {
-        font-size: .75em;
-        background-color: white;
-        padding: 2px 5px;
+        P {
         color: rgba(0,0,0,.6);
-        border-radius: 2px;
-        box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-        margin: 5px;
         }
 
-        span:hover {
+        a {
+        color: rgba(0,0,0,.6);
+        }
+
+        a:hover {
         color: #53CACE;
         }
 
-        p:nth-of-type(2) {
+        strong:nth-of-type(2) {
         font-size: 1em;
         }
 
@@ -104,21 +131,25 @@
     
     <div id='container'>
         <div class='signup'>
-           <form>
-             <input type='text' placeholder='Prénom:'  />
-             <input type='text' placeholder='Nom:'  />
-             <input type='tel' size="30%" placeholder='Téléphone:'  />
-             <input type='password' size="30%" placeholder='Mot de passe:'  />
-             <input type='submit' placeholder='S inscrire' />
+           <form method='POST'>
+             <input type='text'name="prenom" id="prenom" placeholder='Prénom:'  />
+             <input type='text'name="nom" id="nom" placeholder='Nom:'  />
+             <input type='tel' name="numero" id="numero" placeholder='Téléphone:'  />
+             <input type='password' name="password" id="password" placeholder='Mot de passe:'  />
+             <input type='password' name="rpassword" id="rpassword" placeholder='Répétez le mot de passe:'  />
+             <input type='submit' name="inscription" id="inscription" value='INSCRIPTION' />
+             <p>Déja un compte? <a href="connexion.php">Se connecter</a></p>
            </form>
         </div>
         <div class='whysign'>
-          <h1>Bienvenue à Delivery</h1>
-          <p>Nous n'avons pas de slogan donc j'écris ça pour le fun ! Coding is fun \(^w^)/</p>
+          <h1>Bienvenue sur Delivery</h1>
+          <p> <strong>QUI PEUT ÊTRE PLUS EFFICACE?! PERSONNE</strong> </p>
         </div>
       </div>
       
-
+  <?php
+    include ('../php/inscription.php');
+  ?>
 
 </body>
 </html>
