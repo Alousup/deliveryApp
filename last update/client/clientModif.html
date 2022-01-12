@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<style>
+		.form-box{
+			margin: 25%;
+			margin-top: 10%;
+			margin-bottom: 10%;
+			border-radius: 20px!important;
+			background-color: #ecf0f3;
+			box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
+		}
+
+		.form-content{
+			margin: 10% 20% 20% 20%;
+		}
+
+		.logo {
+			width: 80px;
+			margin: auto;
+			padding-top: 50px;
+		}
+
+		.logo img {
+			width: 100%;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 50%;
+			box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff
+		}
+
+		.form-field input {
+			width: 100%;
+			display: block;
+			border: none;
+			outline: none;
+			background: none;
+			font-size: 1.2rem;
+			color: #666;
+			padding: 10px 15px 10px 10px
+		}
+
+		.form-field {
+			padding-left: 10px;
+			margin-bottom: 20px;
+			border-radius: 20px;
+			box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
+		}
+
+		.form-field .fas {
+			color: #555
+		}
+
+		a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="form-box">
+		<div class="logo"> <img src="icon.png" alt=""> </div>
+		<form class="form-content">
+			<!--
+			<div class="mb-3">
+				<div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="tel" name="numDepart" id="numDepart" placeholder="771234567"> </div>
+			</div>
+			<div class="mb-3">
+				<div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="tel" name="numArrivee" id="numArrivee" placeholder="789876543"> </div>
+			</div>
+			-->
+			<label class="form-label">Véhicule désiré :</label>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="vehicule" id="moto">
+				<label class="form-check-label" for="moto">
+				Moto
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="vehicule" id="voiture" checked>
+				<label class="form-check-label" for="voiture">
+				Voiture
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="vehicule" id="camion">
+				<label class="form-check-label" for="camion">
+				Voiture
+				</label>
+			</div>
+			<select class="form-select" aria-label="Default select example" style="margin-bottom: 20px;">
+				<option>Zone de départ</option>
+				<option value="zone1">Plateau</option>
+				<option value="zone1">Medina</option>
+				<option value="zone1">Point E</option>
+				<option value="zone1">Maristes</option>
+				<option value="zone1">Colobane</option>
+				<option value="zone1" selected>Grand Yoff</option>
+				<option value="zone1">Almadies</option>
+				<option value="zone1">Yoff</option>
+				<option value="zone1">Yarakh</option>
+				<option value="zone2">Pikine</option>
+				<option value="zone2">Guediawaye</option>
+				<option value="zone2">Thiaroye</option>
+				<option value="zone2">Camberene</option>
+				<option value="zone2">Malika</option>
+				<option value="zone2">Keur Massar</option>
+				<option value="zone2">Rufisque</option>
+				<option value="zone2">Lac Rose</option>
+				<option value="zone2">Diamniadio</option>
+				<option value="zone3">AIBD</option>
+				<option value="zone3">Sandiara</option>
+				<option value="zone3">Mbour</option>
+				<option value="zone3">Thies</option>
+				<option value="zone3">Saly</option>
+				<option value="zone3">Ndangane</option>
+				<option value="zone3">Somone</option>
+			</select>
+			<select class="form-select" aria-label="Default select example">
+				<option selected>Zone d'arrivée</option>
+				<option value="zone1">Plateau</option>
+				<option value="zone1">Medina</option>
+				<option value="zone1">Point E</option>
+				<option value="zone1">Maristes</option>
+				<option value="zone1">Colobane</option>
+				<option value="zone1">Grand Yoff</option>
+				<option value="zone1">Almadies</option>
+				<option value="zone1">Yoff</option>
+				<option value="zone1">Yarakh</option>
+				<option value="zone2">Pikine</option>
+				<option value="zone2">Guediawaye</option>
+				<option value="zone2">Thiaroye</option>
+				<option value="zone2">Camberene</option>
+				<option value="zone2">Malika</option>
+				<option value="zone2">Keur Massar</option>
+				<option value="zone2">Rufisque</option>
+				<option value="zone2" selected>Lac Rose</option>
+				<option value="zone2">Diamniadio</option>
+				<option value="zone3">AIBD</option>
+				<option value="zone3">Sandiara</option>
+				<option value="zone3">Mbour</option>
+				<option value="zone3">Thies</option>
+				<option value="zone3">Saly</option>
+				<option value="zone3">Ndangane</option>
+				<option value="zone3">Somone</option>
+			</select>
+			<div style="margin-top: 30px; padding-bottom: 30px;">
+				<button type="submit" class="btn btn-light"><a href="clientHome.html" style="color: black;">Retour</a></button>
+				<button type="submit" class="btn btn-primary" style="margin-left: 70px">Modifier</button>
+				<button type="submit" class="btn btn-danger" style="margin-left: 57px">Annuler</button>
+			</div>
+		</form>
+	</div>
+	
+
+</body>
+</html>
