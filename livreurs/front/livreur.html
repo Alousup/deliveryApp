@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil - Livreur</title>
+
+    <style>
+
+        html {
+        background: url(https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+
+        body {
+        font: 300 14px/18px Roboto
+        }
+
+        *,
+        :after,
+        :before {
+        box-sizing: border-box
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+        content: '';
+        display: table
+        }
+
+        .clearfix:after {
+        clear: both;
+        display: block
+        }
+
+        .muck-up {
+        width: 310px;
+        height: 545px;
+        margin: 5em auto;
+        position: relative;
+        overflow: hidden;
+        }
+
+        .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        }
+
+        .overlay:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(71, 32, 84, 0.5);
+        }
+
+        .muck-up > .top {
+        position: relative;
+        min-height: 240px;
+        padding: 15px;
+        color: #fff;
+        }
+
+        .top .nav span {
+        float: left;
+        display: block;
+        }
+
+        .nav p {
+        margin-top: 2px;
+        display: inline-block;
+        float: left;
+        vertical-align: bottom;
+        }
+
+        .ion-android-menu {
+        font-size: 24px;
+        margin-right: 17px;
+        }
+
+        .nav .ion-ios-more-outline {
+        font-size: 38px;
+        float: right !important;
+        }
+
+        .user-profile {
+        margin-top: 90px;
+        }
+
+        .user-profile img {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 24px;
+        }
+
+        .user-details p {
+        font-size: 11px;
+        }
+
+        .user-details {
+        float: left;
+        margin-top: 5px;
+        vertical-align: bottom;
+        }
+
+        .user-details h4 {
+        font-size: 18px;
+        }
+
+        .filter-btn {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        transition: all 0.4s ease-in-out 0s;
+        }
+
+        .filter-btn span {
+        width: 40px;
+        height: 40px;
+        background: #ff0000;
+        display: block;
+        position: absolute;
+        right: 25px;
+        top: -46px;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        border-radius: 50%;
+        font-size: 22px;
+        z-index: 999;
+        }
+        span.toggle-btn.ion-android-funnel:hover{
+            cursor: pointer;
+        }
+        .filter-btn a {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        right: 25px;
+        display: block;
+        top: -46px;
+        color: #fff;
+        z-index: 99;
+        font-size: 22px;
+        transition: all .4s cubic-bezier(.68, 1, .265, 1)
+        }
+
+        .filter-btn:after {
+        height: 170px;
+        width: 170px;
+        content: '"\f38b"';
+        background-color: #fa3939;
+        position: absolute;
+        top: -110px;
+        right: -40px;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out 0s;
+        }
+
+        .filter-btn.open span.toggle-btn.ion-android-funnel {
+        background-color: #DE3963;
+        }
+
+        .filter-btn.open .ion-android-funnel:before {
+        content: "\f2d7";
+        }
+
+        .open:after {
+        transform: scale(1);
+        }
+
+        .filter-btn.open a:nth-child(1) {
+        transform: translate(9px, -62px);
+        }
+
+        .filter-btn.open a:nth-child(2) {
+        transform: translate(-50px, -34px);
+        }
+
+        .filter-btn.open a:nth-child(3) {
+        transform: translate(-56px, 25px);
+        }
+
+        .filter-btn.open a:nth-child(4) {
+        transform: translate(5px, 61px);
+        }
+
+        .muck-up .bottom {
+        background-color: #fff;
+        min-height: 303px;
+        z-index: 1;
+        padding: 35px;
+        position: relative;
+        color: #222;
+        padding-top: 0px;
+        }
+
+        .bottom:after {
+        content: '';
+        position: absolute;
+        top: -46px;
+        background: #fff;
+        left: -22px;
+        right: 0;
+        height: 100px;
+        transform: rotate(10deg);
+        width: 337px;
+        z-index: -1;
+        }
+
+        .bottom .title {
+        margin-bottom: 20px;
+        }
+
+        .bottom .title h3 {
+        font-size: 22px;
+        margin-bottom: 5px;
+        }
+
+        .title small {
+        font-size: 10px;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        }
+
+        ul{
+        list-style-type: none;
+        }
+
+        ul.tasks .task-title {
+        font-size: 13px;
+        display: inline-block;
+        }
+
+        ul.tasks .task-time {
+        float: right;
+        font-size: 10px;
+        color: #888;
+        }
+
+        ul.tasks .task-details {
+        font-size: 10px;
+        display: block;
+        color: #888;
+        }
+
+        ul.tasks li {
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 8;
+        }
+
+        ul.tasks::after {
+        content: '';
+        position: absolute;
+        height: 400px;
+        width: 1px;
+        background: #eee;
+        left: 20px;
+        top: -68px;
+        }
+
+        .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 50%;
+        right: 40.5%;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+        }       
+    </style>
+
+</head>
+<body>
+    <div class="muck-up">
+        <div class="overlay">
+            <img src="C:\Users\admin\Documents\0 Projet\black-hole-star_md.jpg" alt="">
+        </div>
+        <div class="top">
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Livraisons
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="livreur.html">Nouvelles</a>
+                  <a class="dropdown-item" href="#">En cours</a>
+                  <a class="dropdown-item" href="#">En pause</a>
+                  <a class="dropdown-item" href="#">Terminées</a>
+                </div>
+              </div>
+
+            <div class="user-profile">
+                <img src="profil.png">
+                <div class="user-details">
+                    <h4>The Man</h4>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="filter-btn">
+            <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
+            <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
+            <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
+            <a id="all" href="#"><i class="ion-ios-star-outline"></i></a>
+            <span class="toggle-btn ion-android-funnel" id="bouton" onclick="alert('Vous venez de modifier votre état d activité.')"></span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="bottom">
+            <div class="title">
+                <h3>Nouvelles livraisons</h3>
+                <small>Cups >>> all</small>
+            </div>
+            <ul class="tasks">
+                <li>
+                    <button  class="open-button" onclick="openForm()">
+                        <span class="task-title">Sacré-Coeur -> Ouakam</span>
+                        <span class="task-time">15h30</span>
+                        <span class="task-details">Aissatou Ly - 771234567</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="open-button" onclick="openForm()">
+                        <span class="task-title">Fass -> Diamniadio</span>
+                        <span class="task-time">11h00</span>
+                        <span class="task-details">Mamadou Diop - 789876543</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="open-button" onclick="openForm()">
+                        <span class="task-title">Pikine -> Guediawaye</span>
+                        <span class="task-time">16h15</span>
+                        <span class="task-details">Khady Ndiaye - 761928374</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="open-button" onclick="openForm()">
+                        <span class="task-title">Patte d'oie -> Yoff</span>
+                        <span class="task-time">17h15</span>
+                        <span class="task-details">Rassoul Sall - 709998877</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="form-popup" id="myForm" style="background-color: whitesmoke;">
+        <form action="" class="form-container" style="margin: 30px;">
+            <div>
+                <button id="start"  onclick="alert('Vous venez de modifier l état de cette livraison à <EN COURS>.')" style="background-color: #3cff00;">Démarrer</button>
+                <button id="pause"  onclick="alert('Vous venez de modifier l état de cette livraison à <EN PAUSE>.')" style="background-color: #ffee00;">Pause</button>
+                <button id="stop"  onclick="alert('Vous venez de modifier l état de cette livraison à <TERMINEE>.')" style="background-color: #ff0000;">Arrêter</button>
+            </div>            
+            <button type="button" class="btn cancel" id="cancel" onclick="closeForm()" style="background-color: #888; margin-left: 36%;">Fermer</button>
+        </form>
+    </div>
+    <script>
+        function openForm(id) {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+
+        let btn = document.querySelector('#bouton');
+        btn.addEventListener('click', () => btn.style.backgroundColor='#2bff00');
+    </script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
